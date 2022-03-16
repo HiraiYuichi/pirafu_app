@@ -24701,3 +24701,643 @@ Processing by StaticPagesController#help as HTML
 Completed 200 OK in 18ms (Views: 17.6ms | ActiveRecord: 0.0ms | Allocations: 6137)
 
 
+Started GET "/" for ::1 at 2022-03-16 17:45:40 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 7.4ms | Allocations: 638)
+  Rendered layouts/_shim.html.erb (Duration: 0.2ms | Allocations: 13)
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 109)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 37.9ms | Allocations: 6261)
+Completed 200 OK in 50ms (Views: 47.5ms | Allocations: 6509)
+
+
+Started GET "/" for ::1 at 2022-03-16 17:45:42 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 3.5ms | Allocations: 638)
+  Rendered layouts/_shim.html.erb (Duration: 0.2ms | Allocations: 13)
+  Rendered layouts/_header.html.erb (Duration: 2.3ms | Allocations: 109)
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 26.0ms | Allocations: 6332)
+Completed 200 OK in 28ms (Views: 27.4ms | Allocations: 6580)
+
+
+Started GET "/" for ::1 at 2022-03-16 17:45:43 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 3.7ms | Allocations: 635)
+  Rendered layouts/_shim.html.erb (Duration: 0.4ms | Allocations: 13)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 109)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 6327)
+Completed 200 OK in 26ms (Views: 26.1ms | Allocations: 6575)
+
+
+Started GET "/login" for ::1 at 2022-03-16 17:45:46 +0900
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 14.4ms | Allocations: 657)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 109)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 39.1ms | Allocations: 6359)
+Completed 200 OK in 43ms (Views: 41.6ms | Allocations: 6608)
+
+
+Started POST "/login" for ::1 at 2022-03-16 17:45:52 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"example@railstutorial.org", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログインする"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "example@railstutorial.org"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 175ms (ActiveRecord: 2.5ms | Allocations: 10616)
+
+
+Started GET "/users/1" for ::1 at 2022-03-16 17:45:52 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 220)
+  Rendered layouts/_shim.html.erb (Duration: 0.2ms | Allocations: 13)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:63:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 7.0ms | Allocations: 1371)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | Allocations: 7454)
+Completed 200 OK in 36ms (Views: 26.7ms | ActiveRecord: 0.7ms | Allocations: 9302)
+
+
+Started GET "/users" for ::1 at 2022-03-16 17:45:54 +0900
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:63:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/index.html.erb within layouts/application (Duration: 45.2ms | Allocations: 8232)
+  Rendered layouts/_shim.html.erb (Duration: 0.3ms | Allocations: 13)
+  Rendered layouts/_header.html.erb (Duration: 2.4ms | Allocations: 170)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 74.4ms | Allocations: 13988)
+Completed 200 OK in 91ms (Views: 73.8ms | ActiveRecord: 2.1ms | Allocations: 15142)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (130.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (99.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220308021531)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220308021531"]]
+  [1m[36mTRANSACTION (63.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddIndexToUsersEmail (20220308024007)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220308024007"]]
+  [1m[36mTRANSACTION (108.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPasswordDigestToUsers (20220308025159)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220308025159"]]
+  [1m[36mTRANSACTION (65.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddRememberDigestToUsers (20220311030229)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_digest" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220311030229"]]
+  [1m[36mTRANSACTION (78.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddAdminToUsers (20220314085113)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "admin" boolean DEFAULT 0[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220314085113"]]
+  [1m[36mTRANSACTION (65.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddActivationToUsers (20220315030134)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "activation_digest" varchar[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "activated" boolean DEFAULT 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "activated_at" datetime(6)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220315030134"]]
+  [1m[36mTRANSACTION (59.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-03-16 09:42:09.891325"], ["updated_at", "2022-03-16 09:42:09.891325"]]
+  [1m[36mTRANSACTION (62.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Example User"], ["email", "example@railstutorial.org"], ["created_at", "2022-03-16 09:42:18.276472"], ["updated_at", "2022-03-16 09:42:18.276472"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 1], ["activation_digest", "$2a$10$FsHKLBExOUlDNjsn5ADXuegPYsnIhl2ufDHvsVsQNq2a3qz16tuTq"], ["activated", 1], ["activated_at", "2022-03-16 09:42:18.207449"]]
+  [1m[36mTRANSACTION (67.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-1@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "新井 大樹"], ["email", "example-1@railstutorial.org"], ["created_at", "2022-03-16 09:42:18.961072"], ["updated_at", "2022-03-16 09:42:18.961072"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$/wwIly8WJxlRMpw7DDohsuk2g7C9ifVSs5dCnv4quNVzMI/hHp7am"], ["activated", 1], ["activated_at", "2022-03-16 09:42:18.903001"]]
+  [1m[36mTRANSACTION (58.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-2@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "山下 碧"], ["email", "example-2@railstutorial.org"], ["created_at", "2022-03-16 09:42:19.152705"], ["updated_at", "2022-03-16 09:42:19.152705"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$HfOW7GmnniaO2c1NS229ye2rNi9DCT4EHkzFk0R7j5dNouuWSJ2OW"], ["activated", 1], ["activated_at", "2022-03-16 09:42:19.083810"]]
+  [1m[36mTRANSACTION (68.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-3@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "森 健太"], ["email", "example-3@railstutorial.org"], ["created_at", "2022-03-16 09:42:19.358792"], ["updated_at", "2022-03-16 09:42:19.358792"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$PUcDB4ix3zNCvHVbv2gC2OfnkijC4GNlV1DYCYhdMrshsrYWdIYIe"], ["activated", 1], ["activated_at", "2022-03-16 09:42:19.288087"]]
+  [1m[36mTRANSACTION (65.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-4@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "渡辺 蓮"], ["email", "example-4@railstutorial.org"], ["created_at", "2022-03-16 09:42:19.557913"], ["updated_at", "2022-03-16 09:42:19.557913"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$fXSKKknQeXUswCXV5LlomeNkXgZYxKLmNxj/r8/5lQpHoNVygfB9y"], ["activated", 1], ["activated_at", "2022-03-16 09:42:19.490839"]]
+  [1m[36mTRANSACTION (43.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-5@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "松田 翼"], ["email", "example-5@railstutorial.org"], ["created_at", "2022-03-16 09:42:19.722863"], ["updated_at", "2022-03-16 09:42:19.722863"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$P0L1fqxXkHN1rPPExQ/TBewKpZdfgTaLwfOngqGGeYu5xJtkto7JK"], ["activated", 1], ["activated_at", "2022-03-16 09:42:19.661603"]]
+  [1m[36mTRANSACTION (27.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-6@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "和田 結衣"], ["email", "example-6@railstutorial.org"], ["created_at", "2022-03-16 09:42:19.871867"], ["updated_at", "2022-03-16 09:42:19.871867"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$ISJ1e.rNTsHhAhmSnG7bNufTzcS4VXDWRxtWsdvTsMqZmt1EjX7T2"], ["activated", 1], ["activated_at", "2022-03-16 09:42:19.812200"]]
+  [1m[36mTRANSACTION (53.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-7@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "近藤 諒"], ["email", "example-7@railstutorial.org"], ["created_at", "2022-03-16 09:42:20.094592"], ["updated_at", "2022-03-16 09:42:20.094592"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$kPDoKW3dMJ1KgbD.bZTkOemZFpML5o76ny8PADTUb6giFeSFCOMk6"], ["activated", 1], ["activated_at", "2022-03-16 09:42:20.021197"]]
+  [1m[36mTRANSACTION (73.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-8@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "山田 七海"], ["email", "example-8@railstutorial.org"], ["created_at", "2022-03-16 09:42:20.300756"], ["updated_at", "2022-03-16 09:42:20.300756"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$Onf.iLqwJ7R34NgI.jlv4.0EtaOwFxT1J42naaLDLyHsGZ6rbDllK"], ["activated", 1], ["activated_at", "2022-03-16 09:42:20.230148"]]
+  [1m[36mTRANSACTION (56.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-9@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "松田 海斗"], ["email", "example-9@railstutorial.org"], ["created_at", "2022-03-16 09:42:20.473318"], ["updated_at", "2022-03-16 09:42:20.473318"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$mryryRgca0asXV.KZPPlU.AkF88dZjrMpUMqUTotkBGqzXmIVlpuS"], ["activated", 1], ["activated_at", "2022-03-16 09:42:20.415212"]]
+  [1m[36mTRANSACTION (62.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-10@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "山田 碧"], ["email", "example-10@railstutorial.org"], ["created_at", "2022-03-16 09:42:20.652229"], ["updated_at", "2022-03-16 09:42:20.652229"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$LUPzOGLRoTN.yzcjmeyQTOKZOI0F5CjUo9dL0XTMsEctOOOABQ82W"], ["activated", 1], ["activated_at", "2022-03-16 09:42:20.594042"]]
+  [1m[36mTRANSACTION (56.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-11@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "上野 陽"], ["email", "example-11@railstutorial.org"], ["created_at", "2022-03-16 09:42:20.834079"], ["updated_at", "2022-03-16 09:42:20.834079"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$xnwT883kAceZrHJ8tWGnvOrp7veSlnhgZ7prjvOtmIMC6JuB.3p22"], ["activated", 1], ["activated_at", "2022-03-16 09:42:20.774265"]]
+  [1m[36mTRANSACTION (48.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-12@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "森田 海斗"], ["email", "example-12@railstutorial.org"], ["created_at", "2022-03-16 09:42:21.008537"], ["updated_at", "2022-03-16 09:42:21.008537"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$ASmCkwapTJadd6jPNIWBju6lgrS7tGgEPWK2s4TkoWw9tdsBarSga"], ["activated", 1], ["activated_at", "2022-03-16 09:42:20.944987"]]
+  [1m[36mTRANSACTION (61.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-13@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "田中 智子"], ["email", "example-13@railstutorial.org"], ["created_at", "2022-03-16 09:42:21.196902"], ["updated_at", "2022-03-16 09:42:21.196902"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$M9GerpdNQhpWi4lw1lBnTuAWI.m5atNZ3a.CrP97Rvw1pDkofJBLW"], ["activated", 1], ["activated_at", "2022-03-16 09:42:21.133573"]]
+  [1m[36mTRANSACTION (62.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-14@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "吉田 匠"], ["email", "example-14@railstutorial.org"], ["created_at", "2022-03-16 09:42:21.387819"], ["updated_at", "2022-03-16 09:42:21.387819"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$MiG0cxi.lC41T4TRA9QCZOSb3nTQxYQPCj/J433W.KFHWAr2vfmUu"], ["activated", 1], ["activated_at", "2022-03-16 09:42:21.325327"]]
+  [1m[36mTRANSACTION (72.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-15@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "山田 蓮"], ["email", "example-15@railstutorial.org"], ["created_at", "2022-03-16 09:42:21.582251"], ["updated_at", "2022-03-16 09:42:21.582251"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$tucLurQBqiYat0bWeaag9uHQcIEL9d6w71boA1C32bGTuEe1O3noe"], ["activated", 1], ["activated_at", "2022-03-16 09:42:21.523160"]]
+  [1m[36mTRANSACTION (64.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-16@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "長谷川 愛美"], ["email", "example-16@railstutorial.org"], ["created_at", "2022-03-16 09:42:21.777688"], ["updated_at", "2022-03-16 09:42:21.777688"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$AG/7KiKFbGESryCHksgJWuKf/o5k9WP.mJKPgEBl3jvM5HCPXuKm."], ["activated", 1], ["activated_at", "2022-03-16 09:42:21.713450"]]
+  [1m[36mTRANSACTION (68.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-17@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "斉藤 花音"], ["email", "example-17@railstutorial.org"], ["created_at", "2022-03-16 09:42:21.980007"], ["updated_at", "2022-03-16 09:42:21.980007"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$2LiVIFyTO9dYfexvQFtTluiekfhTpkRt/fzc7Qiu9f.FTHoLXzoUC"], ["activated", 1], ["activated_at", "2022-03-16 09:42:21.907592"]]
+  [1m[36mTRANSACTION (70.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-18@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "吉田 翼"], ["email", "example-18@railstutorial.org"], ["created_at", "2022-03-16 09:42:22.185190"], ["updated_at", "2022-03-16 09:42:22.185190"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$kcWbNiadB3cKodmHS/dRbO9iQXkQ11Fg8kOIcLewUbjI.IvKN2DHG"], ["activated", 1], ["activated_at", "2022-03-16 09:42:22.117364"]]
+  [1m[36mTRANSACTION (59.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-19@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "野村 悠斗"], ["email", "example-19@railstutorial.org"], ["created_at", "2022-03-16 09:42:22.383823"], ["updated_at", "2022-03-16 09:42:22.383823"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$2ZPQjtOqY8OVPVAFumkfN.IFmwNchlMsIYMN/9ppjJx5WejFEo8g6"], ["activated", 1], ["activated_at", "2022-03-16 09:42:22.313352"]]
+  [1m[36mTRANSACTION (60.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-20@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "上野 諒"], ["email", "example-20@railstutorial.org"], ["created_at", "2022-03-16 09:42:22.601130"], ["updated_at", "2022-03-16 09:42:22.601130"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$6547emXOPTwAWRddBWeG3.bqH87gtNjEF5FH.cZg6KxgvdNDowvIm"], ["activated", 1], ["activated_at", "2022-03-16 09:42:22.528720"]]
+  [1m[36mTRANSACTION (59.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-21@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "中山 優"], ["email", "example-21@railstutorial.org"], ["created_at", "2022-03-16 09:42:22.789791"], ["updated_at", "2022-03-16 09:42:22.789791"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$x7lUPgIHTnBTj2eVfV6iCeqAfx8p.SNkrG7WfGEBtOX/OKHfZoV4O"], ["activated", 1], ["activated_at", "2022-03-16 09:42:22.724413"]]
+  [1m[36mTRANSACTION (49.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-22@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "岡田 美咲"], ["email", "example-22@railstutorial.org"], ["created_at", "2022-03-16 09:42:22.973514"], ["updated_at", "2022-03-16 09:42:22.973514"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$zg8VZ3BLyB1IG2a1f/oGruFSBoXcnoILwQtURa.8BHH.gqZecyPoy"], ["activated", 1], ["activated_at", "2022-03-16 09:42:22.910777"]]
+  [1m[36mTRANSACTION (53.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-23@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "中村 隼人"], ["email", "example-23@railstutorial.org"], ["created_at", "2022-03-16 09:42:23.152767"], ["updated_at", "2022-03-16 09:42:23.152767"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$yDYFesCbtfICpigu1o9us./bVcFByJKsl/OYg3T7BoR6DSg3KufxW"], ["activated", 1], ["activated_at", "2022-03-16 09:42:23.089515"]]
+  [1m[36mTRANSACTION (62.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-24@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "高田 杏"], ["email", "example-24@railstutorial.org"], ["created_at", "2022-03-16 09:42:23.346900"], ["updated_at", "2022-03-16 09:42:23.346900"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$ASAER9ed6gYY6vOhwm.DyOfw.CaDcKuTNX0frcieFl8TqtfysVleS"], ["activated", 1], ["activated_at", "2022-03-16 09:42:23.279915"]]
+  [1m[36mTRANSACTION (48.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-25@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "丸山 結菜"], ["email", "example-25@railstutorial.org"], ["created_at", "2022-03-16 09:42:23.536426"], ["updated_at", "2022-03-16 09:42:23.536426"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$rbzKihw1JOBRjXQ5kuO9Zuq4UAo8VhNsCsL47l2A1b.nvrOA1J0Dm"], ["activated", 1], ["activated_at", "2022-03-16 09:42:23.466767"]]
+  [1m[36mTRANSACTION (60.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-26@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "橋本 誠"], ["email", "example-26@railstutorial.org"], ["created_at", "2022-03-16 09:42:23.724061"], ["updated_at", "2022-03-16 09:42:23.724061"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$ghPj32bMrSYjBpEgu9o2dOlR234fP9HNU0xCOlkiiSwut1oQrkfNa"], ["activated", 1], ["activated_at", "2022-03-16 09:42:23.657533"]]
+  [1m[36mTRANSACTION (59.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-27@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "三浦 大輝"], ["email", "example-27@railstutorial.org"], ["created_at", "2022-03-16 09:42:23.908320"], ["updated_at", "2022-03-16 09:42:23.908320"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$XSscYkpG.8d5rgieB52v7efMvRfwkBkgR.QYXQT3rBXKjYrIhLD5e"], ["activated", 1], ["activated_at", "2022-03-16 09:42:23.847153"]]
+  [1m[36mTRANSACTION (27.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-28@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "山本 拓海"], ["email", "example-28@railstutorial.org"], ["created_at", "2022-03-16 09:42:24.060512"], ["updated_at", "2022-03-16 09:42:24.060512"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$Z/ArkGOr8BJc.DllwRi8/Ov7hUzLtepuCCjtbT1bhTIsIO6xapEpm"], ["activated", 1], ["activated_at", "2022-03-16 09:42:23.997115"]]
+  [1m[36mTRANSACTION (28.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-29@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "大野 颯太"], ["email", "example-29@railstutorial.org"], ["created_at", "2022-03-16 09:42:24.218128"], ["updated_at", "2022-03-16 09:42:24.218128"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$G08yHsrn.PQudhYww5tryO9IOPhnZdvRbD5oeCfqNv2xxi/IxAEGG"], ["activated", 1], ["activated_at", "2022-03-16 09:42:24.154885"]]
+  [1m[36mTRANSACTION (31.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-30@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "菊地 颯"], ["email", "example-30@railstutorial.org"], ["created_at", "2022-03-16 09:42:24.379162"], ["updated_at", "2022-03-16 09:42:24.379162"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$z5XEKRMFzuqgJbkCor.4B.M2sZDdKv.nLLbJB.w8wUaY4YX1GlnIm"], ["activated", 1], ["activated_at", "2022-03-16 09:42:24.314656"]]
+  [1m[36mTRANSACTION (49.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-31@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "小野 綾乃"], ["email", "example-31@railstutorial.org"], ["created_at", "2022-03-16 09:42:24.562368"], ["updated_at", "2022-03-16 09:42:24.562368"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$.fIXFLzNPBR6LSZEQw1VVueHpNsSNUJCZml0bcaNAhgE449hzHU4y"], ["activated", 1], ["activated_at", "2022-03-16 09:42:24.495287"]]
+  [1m[36mTRANSACTION (42.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-32@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "山本 結"], ["email", "example-32@railstutorial.org"], ["created_at", "2022-03-16 09:42:24.735665"], ["updated_at", "2022-03-16 09:42:24.735665"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$xstw6b4HPcdxNSSKhQl94uXsLhd6Sp7AzzHw8tR764xjEjkv.2ll."], ["activated", 1], ["activated_at", "2022-03-16 09:42:24.665089"]]
+  [1m[36mTRANSACTION (31.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-33@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "山口 優"], ["email", "example-33@railstutorial.org"], ["created_at", "2022-03-16 09:42:24.892944"], ["updated_at", "2022-03-16 09:42:24.892944"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$ADjjCvlxyT.fFz/s6jaBSutRnjj1.QlR3l0S6CZq8yRur7nZWM8xO"], ["activated", 1], ["activated_at", "2022-03-16 09:42:24.830981"]]
+  [1m[36mTRANSACTION (33.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-34@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "森 陽菜"], ["email", "example-34@railstutorial.org"], ["created_at", "2022-03-16 09:42:25.076348"], ["updated_at", "2022-03-16 09:42:25.076348"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$.L6fCoveozWpDRuKAXiWfuFGlnc.DbgpJ2dZQaZX0Fa32qXl/vfTW"], ["activated", 1], ["activated_at", "2022-03-16 09:42:24.996956"]]
+  [1m[36mTRANSACTION (28.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-35@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "宮本 舞"], ["email", "example-35@railstutorial.org"], ["created_at", "2022-03-16 09:42:25.232596"], ["updated_at", "2022-03-16 09:42:25.232596"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$SWVv..1NbUAITCO3l0VNluQaHjb6NESt88LjiiohNY7EpdIuydBcO"], ["activated", 1], ["activated_at", "2022-03-16 09:42:25.169437"]]
+  [1m[36mTRANSACTION (28.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-36@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "藤井 輝"], ["email", "example-36@railstutorial.org"], ["created_at", "2022-03-16 09:42:25.382370"], ["updated_at", "2022-03-16 09:42:25.382370"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$BCufnJTOxuHroAINGK.nfOuo/onNolCPIgaYhiSE4W.Aj.GchtsMC"], ["activated", 1], ["activated_at", "2022-03-16 09:42:25.321815"]]
+  [1m[36mTRANSACTION (27.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-37@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "岡本 美羽"], ["email", "example-37@railstutorial.org"], ["created_at", "2022-03-16 09:42:25.535342"], ["updated_at", "2022-03-16 09:42:25.535342"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$mL3mgMK7H4dbu0KGs1GiyeWrkY02teWXFuTfPxLC62h.alAiJnOme"], ["activated", 1], ["activated_at", "2022-03-16 09:42:25.470949"]]
+  [1m[36mTRANSACTION (27.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-38@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "原 花音"], ["email", "example-38@railstutorial.org"], ["created_at", "2022-03-16 09:42:25.693786"], ["updated_at", "2022-03-16 09:42:25.693786"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$hmcJKko4.pJWwYS9z5lePO1f/1qsv31Rp5lEwTgOrzao9eeO.jw5i"], ["activated", 1], ["activated_at", "2022-03-16 09:42:25.630290"]]
+  [1m[36mTRANSACTION (31.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-39@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "遠藤 亮"], ["email", "example-39@railstutorial.org"], ["created_at", "2022-03-16 09:42:25.856752"], ["updated_at", "2022-03-16 09:42:25.856752"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$6cjdds89MJk6D.y7Nqo9BealMeyyxI.kWpBWAtjF5T1fWXY/cMWVa"], ["activated", 1], ["activated_at", "2022-03-16 09:42:25.792120"]]
+  [1m[36mTRANSACTION (30.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-40@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "伊藤 琴音"], ["email", "example-40@railstutorial.org"], ["created_at", "2022-03-16 09:42:26.018057"], ["updated_at", "2022-03-16 09:42:26.018057"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$Hc4WuP8AuqMrxste0xAvKe8uGbW2Jy/7FFFDRHUddemx0sIBy9pAq"], ["activated", 1], ["activated_at", "2022-03-16 09:42:25.954450"]]
+  [1m[36mTRANSACTION (20.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-41@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "小山 樹"], ["email", "example-41@railstutorial.org"], ["created_at", "2022-03-16 09:42:26.163785"], ["updated_at", "2022-03-16 09:42:26.163785"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$mC2cQgX7Ax1PQHjs.bo4i.OWJI3cI6b0as/gz9LMaZ8WbcPkhmq1G"], ["activated", 1], ["activated_at", "2022-03-16 09:42:26.101042"]]
+  [1m[36mTRANSACTION (30.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-42@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "高木 一輝"], ["email", "example-42@railstutorial.org"], ["created_at", "2022-03-16 09:42:26.319646"], ["updated_at", "2022-03-16 09:42:26.319646"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$RANCbKsFaS9aLNb/HkrUouvPdMsAlqPjD36dLBVBwUjd1fhmJ.NVi"], ["activated", 1], ["activated_at", "2022-03-16 09:42:26.257550"]]
+  [1m[36mTRANSACTION (19.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-43@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "三浦 愛子"], ["email", "example-43@railstutorial.org"], ["created_at", "2022-03-16 09:42:26.464901"], ["updated_at", "2022-03-16 09:42:26.464901"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$zB/1G.D91.LKU7QuvTs0v.NxEd0Yqo7vDR3J6WEAyI6VyCPsP/Oo6"], ["activated", 1], ["activated_at", "2022-03-16 09:42:26.402456"]]
+  [1m[36mTRANSACTION (34.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-44@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "橋本 遥"], ["email", "example-44@railstutorial.org"], ["created_at", "2022-03-16 09:42:26.623630"], ["updated_at", "2022-03-16 09:42:26.623630"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$.TT37lE2lGc5JjtwG/n7AetU9eCwdniOrQoDHgWnlb9nRYMe5KMIW"], ["activated", 1], ["activated_at", "2022-03-16 09:42:26.561499"]]
+  [1m[36mTRANSACTION (25.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-45@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "大塚 健"], ["email", "example-45@railstutorial.org"], ["created_at", "2022-03-16 09:42:26.787435"], ["updated_at", "2022-03-16 09:42:26.787435"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$sutcGw2BpsKuSxg3RjknTO4hf09O/g0Bglc6S4yQKpda2r4oh2DG2"], ["activated", 1], ["activated_at", "2022-03-16 09:42:26.716293"]]
+  [1m[36mTRANSACTION (19.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-46@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "田村 悠斗"], ["email", "example-46@railstutorial.org"], ["created_at", "2022-03-16 09:42:26.933059"], ["updated_at", "2022-03-16 09:42:26.933059"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$qI7d4Lt5KV488K1IWyxzSOiKTW1wEVQEWwHTjcaXMLRUZnoRhBOaO"], ["activated", 1], ["activated_at", "2022-03-16 09:42:26.871135"]]
+  [1m[36mTRANSACTION (66.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-47@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "宮本 凛"], ["email", "example-47@railstutorial.org"], ["created_at", "2022-03-16 09:42:27.138714"], ["updated_at", "2022-03-16 09:42:27.138714"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$QVYdt1JQgxki7O2tHgWZgOgbC5bYCMsTGlD7SlZh3UlZajzC0yJ4m"], ["activated", 1], ["activated_at", "2022-03-16 09:42:27.064047"]]
+  [1m[36mTRANSACTION (44.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-48@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "森田 拓海"], ["email", "example-48@railstutorial.org"], ["created_at", "2022-03-16 09:42:27.311894"], ["updated_at", "2022-03-16 09:42:27.311894"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$41xUIGAQbykV191Q7hxS5emnilf5BKZa/aw0xN8dC4fqNmNW4xhvm"], ["activated", 1], ["activated_at", "2022-03-16 09:42:27.244951"]]
+  [1m[36mTRANSACTION (28.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-49@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "佐藤 優花"], ["email", "example-49@railstutorial.org"], ["created_at", "2022-03-16 09:42:27.467685"], ["updated_at", "2022-03-16 09:42:27.467685"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$ZbkvlhRYuTaWIn54nrgaNeTdWHIunTmFaQ/ywbZXrUtWBkt2pWiSy"], ["activated", 1], ["activated_at", "2022-03-16 09:42:27.403726"]]
+  [1m[36mTRANSACTION (37.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-50@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "横山 悠真"], ["email", "example-50@railstutorial.org"], ["created_at", "2022-03-16 09:42:27.630913"], ["updated_at", "2022-03-16 09:42:27.630913"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$fV0abazswdJJfxlPucCfq.GAJBG78kSI7KaTyqRF8MTYaiCcF5e6W"], ["activated", 1], ["activated_at", "2022-03-16 09:42:27.567463"]]
+  [1m[36mTRANSACTION (30.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-51@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "岩崎 大樹"], ["email", "example-51@railstutorial.org"], ["created_at", "2022-03-16 09:42:27.785706"], ["updated_at", "2022-03-16 09:42:27.785706"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$Ngnk6AcwZzSE94Wpp7pd.O.cJE5sUSAZi921Cr8PLgaVlmnqnfzpG"], ["activated", 1], ["activated_at", "2022-03-16 09:42:27.723885"]]
+  [1m[36mTRANSACTION (18.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-52@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "山田 健"], ["email", "example-52@railstutorial.org"], ["created_at", "2022-03-16 09:42:27.927580"], ["updated_at", "2022-03-16 09:42:27.927580"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$eCNXMZWP06N16VR.Hpf7aug/pMOa1ztzcjEhWqoHocqCruiPsBG56"], ["activated", 1], ["activated_at", "2022-03-16 09:42:27.866629"]]
+  [1m[36mTRANSACTION (32.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-53@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "山田 悠人"], ["email", "example-53@railstutorial.org"], ["created_at", "2022-03-16 09:42:28.083314"], ["updated_at", "2022-03-16 09:42:28.083314"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$5cSJlt126ki4o81BZIMsduU5Duoogwn29PTeSaQnLLEJ1eUuOTBTW"], ["activated", 1], ["activated_at", "2022-03-16 09:42:28.021155"]]
+  [1m[36mTRANSACTION (17.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-54@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "山崎 千尋"], ["email", "example-54@railstutorial.org"], ["created_at", "2022-03-16 09:42:28.224486"], ["updated_at", "2022-03-16 09:42:28.224486"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$SEL8y9yywfP8I171arqGNukQyIzf3dw1sqdBWR3nkeQ6SNUILA186"], ["activated", 1], ["activated_at", "2022-03-16 09:42:28.163501"]]
+  [1m[36mTRANSACTION (25.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-55@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "丸山 さくら"], ["email", "example-55@railstutorial.org"], ["created_at", "2022-03-16 09:42:28.372386"], ["updated_at", "2022-03-16 09:42:28.372386"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$5YjT93QUhKsSMFpvEIJSZuCIu/wQJIpWmgCNJ5jSmwVgLUHftUHE6"], ["activated", 1], ["activated_at", "2022-03-16 09:42:28.311737"]]
+  [1m[36mTRANSACTION (35.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-56@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "太田 琴音"], ["email", "example-56@railstutorial.org"], ["created_at", "2022-03-16 09:42:28.533558"], ["updated_at", "2022-03-16 09:42:28.533558"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$NfhHyFklsCuxxuvF.iPJK.iLCnWaqcWWMWOru8YXMxtdolbJXslNa"], ["activated", 1], ["activated_at", "2022-03-16 09:42:28.470144"]]
+  [1m[36mTRANSACTION (33.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-57@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "野村 愛子"], ["email", "example-57@railstutorial.org"], ["created_at", "2022-03-16 09:42:28.691046"], ["updated_at", "2022-03-16 09:42:28.691046"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$WokD7IG3mgIt/0JTwIpxIeNAn9Q1HINzR.NFaYrCyoH805GRWRJzi"], ["activated", 1], ["activated_at", "2022-03-16 09:42:28.628606"]]
+  [1m[36mTRANSACTION (31.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-58@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "山口 悠真"], ["email", "example-58@railstutorial.org"], ["created_at", "2022-03-16 09:42:28.852714"], ["updated_at", "2022-03-16 09:42:28.852714"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$1c2qo9rbJyBaTdZ0G6wI..uAV.nvk6rFlXUgsnzKEHd7MSsxpm13a"], ["activated", 1], ["activated_at", "2022-03-16 09:42:28.790535"]]
+  [1m[36mTRANSACTION (32.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-59@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "松尾 美優"], ["email", "example-59@railstutorial.org"], ["created_at", "2022-03-16 09:42:29.007790"], ["updated_at", "2022-03-16 09:42:29.007790"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$YrJgCIHHsDbjT3cnTx3l0OKynCkk3A9lO.0aj7dIj2XX42e8BPZKS"], ["activated", 1], ["activated_at", "2022-03-16 09:42:28.947055"]]
+  [1m[36mTRANSACTION (28.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-60@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "吉田 海斗"], ["email", "example-60@railstutorial.org"], ["created_at", "2022-03-16 09:42:29.157068"], ["updated_at", "2022-03-16 09:42:29.157068"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$yScY9304L9Ibr7A2vexE9eko9Wo8LHUwVlqehMuXxzrDGq1CWW29a"], ["activated", 1], ["activated_at", "2022-03-16 09:42:29.096751"]]
+  [1m[36mTRANSACTION (28.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-61@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "藤井 陽"], ["email", "example-61@railstutorial.org"], ["created_at", "2022-03-16 09:42:29.306603"], ["updated_at", "2022-03-16 09:42:29.306603"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$eiMG2iO/JAlw4n6AcO6CDulTWROU4pRHiuxUpeaVXwLvBy.ss7dfG"], ["activated", 1], ["activated_at", "2022-03-16 09:42:29.246961"]]
+  [1m[36mTRANSACTION (36.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-62@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "遠藤 太一"], ["email", "example-62@railstutorial.org"], ["created_at", "2022-03-16 09:42:29.461928"], ["updated_at", "2022-03-16 09:42:29.461928"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$kVzz.9Xenmz8E6Q4pClsEOlb4kd.aquw7BPewQe3iE9xlk4glr0fC"], ["activated", 1], ["activated_at", "2022-03-16 09:42:29.402559"]]
+  [1m[36mTRANSACTION (21.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-63@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "竹内 駿"], ["email", "example-63@railstutorial.org"], ["created_at", "2022-03-16 09:42:29.604566"], ["updated_at", "2022-03-16 09:42:29.604566"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$kKGAHAwISnQyeJlGbvJohukB6XZmrcV5n3AifNDnqY6TzwG9y5aLy"], ["activated", 1], ["activated_at", "2022-03-16 09:42:29.545476"]]
+  [1m[36mTRANSACTION (28.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-64@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "千葉 舞"], ["email", "example-64@railstutorial.org"], ["created_at", "2022-03-16 09:42:29.758695"], ["updated_at", "2022-03-16 09:42:29.758695"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$vrmv32Z/lfGvOpz2h3ErueznpyGwoaQIoR3TdH4JUvJgOyxl5Ra6W"], ["activated", 1], ["activated_at", "2022-03-16 09:42:29.694687"]]
+  [1m[36mTRANSACTION (19.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-65@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "菅原 太郎"], ["email", "example-65@railstutorial.org"], ["created_at", "2022-03-16 09:42:29.899351"], ["updated_at", "2022-03-16 09:42:29.899351"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$N6YsKQdWwNasxsuODFIExO/nknnbjLPKAH0by5aY3sqnqi3kgmh12"], ["activated", 1], ["activated_at", "2022-03-16 09:42:29.839883"]]
+  [1m[36mTRANSACTION (32.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-66@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "近藤 大輝"], ["email", "example-66@railstutorial.org"], ["created_at", "2022-03-16 09:42:30.055431"], ["updated_at", "2022-03-16 09:42:30.055431"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$9UdY9TDezWUz6.AQNVqtkubMaCvDVuT5cv6qXDO0wmzn86f8kNigi"], ["activated", 1], ["activated_at", "2022-03-16 09:42:29.993765"]]
+  [1m[36mTRANSACTION (34.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-67@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "藤本 美桜"], ["email", "example-67@railstutorial.org"], ["created_at", "2022-03-16 09:42:30.218769"], ["updated_at", "2022-03-16 09:42:30.218769"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$S2N2dZd5sHHwSfmKQrw2ReYQfmL9tgNZSAh0tfgYW0DOnZ0KOivnu"], ["activated", 1], ["activated_at", "2022-03-16 09:42:30.152967"]]
+  [1m[36mTRANSACTION (23.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-68@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "岩崎 陽子"], ["email", "example-68@railstutorial.org"], ["created_at", "2022-03-16 09:42:30.380014"], ["updated_at", "2022-03-16 09:42:30.380014"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$59rs8oSFdmqUZOe13Iox5eYpesFIUfz6atOBjBpoDRYqbHiz56bwC"], ["activated", 1], ["activated_at", "2022-03-16 09:42:30.308924"]]
+  [1m[36mTRANSACTION (38.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-69@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "内田 綾乃"], ["email", "example-69@railstutorial.org"], ["created_at", "2022-03-16 09:42:30.556079"], ["updated_at", "2022-03-16 09:42:30.556079"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$/2LCt0/5WY90t7.6b2QIYevu2nYMTNsWRwhwFvjWNHCmRHy4joipu"], ["activated", 1], ["activated_at", "2022-03-16 09:42:30.488208"]]
+  [1m[36mTRANSACTION (30.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-70@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "福田 凛"], ["email", "example-70@railstutorial.org"], ["created_at", "2022-03-16 09:42:30.709709"], ["updated_at", "2022-03-16 09:42:30.709709"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$HfKX6CasEOE8a0vVnihXxuBz/f9XG/RquhAPW6vApUi4NXx3.ACna"], ["activated", 1], ["activated_at", "2022-03-16 09:42:30.645525"]]
+  [1m[36mTRANSACTION (27.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-71@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "河野 悠斗"], ["email", "example-71@railstutorial.org"], ["created_at", "2022-03-16 09:42:30.859992"], ["updated_at", "2022-03-16 09:42:30.859992"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$TKlVtGM/Prh8sVG8aZtzUushbb9hIyoa74wxQPT1YfaIENEcN/QXq"], ["activated", 1], ["activated_at", "2022-03-16 09:42:30.798492"]]
+  [1m[36mTRANSACTION (18.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-72@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "山崎 翔太"], ["email", "example-72@railstutorial.org"], ["created_at", "2022-03-16 09:42:30.998807"], ["updated_at", "2022-03-16 09:42:30.998807"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$hj8Zso4Xy11HKW8nnMLfgOYkCMSpj8wAtiTizfkulSo28Yvc94NUu"], ["activated", 1], ["activated_at", "2022-03-16 09:42:30.938781"]]
+  [1m[36mTRANSACTION (43.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-73@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "宮本 花音"], ["email", "example-73@railstutorial.org"], ["created_at", "2022-03-16 09:42:31.176905"], ["updated_at", "2022-03-16 09:42:31.176905"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$.mB9IyV..9VNDQ356gmq9.0tA1AOVfqHpIQm8cEzgBM3HTnf7Soay"], ["activated", 1], ["activated_at", "2022-03-16 09:42:31.112915"]]
+  [1m[36mTRANSACTION (33.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-74@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "上田 優衣"], ["email", "example-74@railstutorial.org"], ["created_at", "2022-03-16 09:42:31.333667"], ["updated_at", "2022-03-16 09:42:31.333667"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$uH6S3kAF.zoZmuD19TGcVuDsGwnRDwDoyopZPkmKZrCCYiO2W2CyS"], ["activated", 1], ["activated_at", "2022-03-16 09:42:31.273012"]]
+  [1m[36mTRANSACTION (32.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-75@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "松田 一輝"], ["email", "example-75@railstutorial.org"], ["created_at", "2022-03-16 09:42:31.507766"], ["updated_at", "2022-03-16 09:42:31.507766"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$gpMFKCr8xf91WkNBx2NkDO4V8Vck.dkOm9oSlPh1JZapsyP0ENFia"], ["activated", 1], ["activated_at", "2022-03-16 09:42:31.435512"]]
+  [1m[36mTRANSACTION (33.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-76@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "中島 美咲"], ["email", "example-76@railstutorial.org"], ["created_at", "2022-03-16 09:42:31.665006"], ["updated_at", "2022-03-16 09:42:31.665006"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$qccxPjlZvO2pZRWioqUjBuKwRqGSo6KRCKAzzRzN.VWxVuBy7uqUW"], ["activated", 1], ["activated_at", "2022-03-16 09:42:31.604081"]]
+  [1m[36mTRANSACTION (47.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-77@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "平野 芽衣"], ["email", "example-77@railstutorial.org"], ["created_at", "2022-03-16 09:42:31.835612"], ["updated_at", "2022-03-16 09:42:31.835612"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$l/c/ItvnCMT7uftcIEmwOOGTsFXHI3Wv0xlVTqJwcBRLLvRYBUoOi"], ["activated", 1], ["activated_at", "2022-03-16 09:42:31.774019"]]
+  [1m[36mTRANSACTION (32.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-78@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "宮本 陽子"], ["email", "example-78@railstutorial.org"], ["created_at", "2022-03-16 09:42:31.990727"], ["updated_at", "2022-03-16 09:42:31.990727"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$Pw5Y2oLo9jzR658lz1uUne4/JGr8IHNYkzfPTuhKdXRH9k3zlVxvu"], ["activated", 1], ["activated_at", "2022-03-16 09:42:31.929821"]]
+  [1m[36mTRANSACTION (28.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-79@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "小山 悠太"], ["email", "example-79@railstutorial.org"], ["created_at", "2022-03-16 09:42:32.146464"], ["updated_at", "2022-03-16 09:42:32.146464"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$AWFwAl4Z98vpqmeUx0kp/u.S6q0Eoi.rvyqmQ2TNJ7zFkfwPq0tHK"], ["activated", 1], ["activated_at", "2022-03-16 09:42:32.084745"]]
+  [1m[36mTRANSACTION (34.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-80@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "竹内 千尋"], ["email", "example-80@railstutorial.org"], ["created_at", "2022-03-16 09:42:32.308407"], ["updated_at", "2022-03-16 09:42:32.308407"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$jdyPMuUIZlyoRY1ziefb7uZmpNvWD8OD77IWx05c/r3O/XryCz.mC"], ["activated", 1], ["activated_at", "2022-03-16 09:42:32.244369"]]
+  [1m[36mTRANSACTION (22.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-81@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "鈴木 美羽"], ["email", "example-81@railstutorial.org"], ["created_at", "2022-03-16 09:42:32.451450"], ["updated_at", "2022-03-16 09:42:32.451450"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$T3EHWg.fearFxxppyQFrOe4ovRpkbvsPBh/IGfVOFCpHNHUcMinMe"], ["activated", 1], ["activated_at", "2022-03-16 09:42:32.390554"]]
+  [1m[36mTRANSACTION (28.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-82@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "石田 優衣"], ["email", "example-82@railstutorial.org"], ["created_at", "2022-03-16 09:42:32.602630"], ["updated_at", "2022-03-16 09:42:32.602630"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$g/c8dC7OgrhM9YvRAHaYVehaDLLb2xMc82Oh0rdQGCsp5BsEQcphi"], ["activated", 1], ["activated_at", "2022-03-16 09:42:32.541784"]]
+  [1m[36mTRANSACTION (25.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-83@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "大塚 陽太"], ["email", "example-83@railstutorial.org"], ["created_at", "2022-03-16 09:42:32.751520"], ["updated_at", "2022-03-16 09:42:32.751520"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$BF6QqAglTv5XvcRYaQrwyerjXG6nHi3JUBefGCgq3UB.IJgCXX.8q"], ["activated", 1], ["activated_at", "2022-03-16 09:42:32.689786"]]
+  [1m[36mTRANSACTION (34.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-84@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "内田 茜"], ["email", "example-84@railstutorial.org"], ["created_at", "2022-03-16 09:42:32.908965"], ["updated_at", "2022-03-16 09:42:32.908965"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$3J.4yS.CcOT8BLERywxNdOiVMvXbGlwRmnA50rcdyanSVbebLCoZq"], ["activated", 1], ["activated_at", "2022-03-16 09:42:32.848604"]]
+  [1m[36mTRANSACTION (25.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-85@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "長谷川 遼"], ["email", "example-85@railstutorial.org"], ["created_at", "2022-03-16 09:42:33.054022"], ["updated_at", "2022-03-16 09:42:33.054022"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$FE4u5wvo2xWbU.U59yvGLOTkCHikfSiDeu6ZphSscIaTBjFbVv9Oi"], ["activated", 1], ["activated_at", "2022-03-16 09:42:32.993810"]]
+  [1m[36mTRANSACTION (48.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-86@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "原田 悠人"], ["email", "example-86@railstutorial.org"], ["created_at", "2022-03-16 09:42:33.239422"], ["updated_at", "2022-03-16 09:42:33.239422"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$60pz8QgZCc4v8FVaRvIs5.VsZ4qCwN1ZBoEBdHzYD7xEj1umx3A8m"], ["activated", 1], ["activated_at", "2022-03-16 09:42:33.169379"]]
+  [1m[36mTRANSACTION (22.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-87@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "松井 光"], ["email", "example-87@railstutorial.org"], ["created_at", "2022-03-16 09:42:33.383559"], ["updated_at", "2022-03-16 09:42:33.383559"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$AqlYHl1qrxYWsgoNvY8Jnu7kvm52tBEskXIgiR.r0zpWYSm9irI8e"], ["activated", 1], ["activated_at", "2022-03-16 09:42:33.324331"]]
+  [1m[36mTRANSACTION (47.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-88@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "上田 結菜"], ["email", "example-88@railstutorial.org"], ["created_at", "2022-03-16 09:42:33.564612"], ["updated_at", "2022-03-16 09:42:33.564612"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$taa9kFI0.qKjCMexGW/6LOc2jkL71MMV0PUPx46tVAXDw15jpaJM2"], ["activated", 1], ["activated_at", "2022-03-16 09:42:33.495292"]]
+  [1m[36mTRANSACTION (29.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-89@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "阿部 翔太"], ["email", "example-89@railstutorial.org"], ["created_at", "2022-03-16 09:42:33.724439"], ["updated_at", "2022-03-16 09:42:33.724439"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$g.IZJLp4I7KcGnenBAWvbOFzBvT8jwH6qeXVhbOeHOa7EAiAec61G"], ["activated", 1], ["activated_at", "2022-03-16 09:42:33.659208"]]
+  [1m[36mTRANSACTION (19.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-90@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "安藤 悠斗"], ["email", "example-90@railstutorial.org"], ["created_at", "2022-03-16 09:42:33.866802"], ["updated_at", "2022-03-16 09:42:33.866802"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$y/R.ipNEEM74xcLnuBx2GOahSrFBP8wWo/wWH9vZnnLp/qbRA0ddq"], ["activated", 1], ["activated_at", "2022-03-16 09:42:33.804461"]]
+  [1m[36mTRANSACTION (66.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-91@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "岩崎 優菜"], ["email", "example-91@railstutorial.org"], ["created_at", "2022-03-16 09:42:34.057306"], ["updated_at", "2022-03-16 09:42:34.057306"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$9Y4BCyYDx4zTFmSA4I1YV.fOhrCBkYjdzcLMJpTrIe7wInrMxjrfG"], ["activated", 1], ["activated_at", "2022-03-16 09:42:33.999141"]]
+  [1m[36mTRANSACTION (50.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-92@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "伊藤 美優"], ["email", "example-92@railstutorial.org"], ["created_at", "2022-03-16 09:42:34.228176"], ["updated_at", "2022-03-16 09:42:34.228176"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$slFJSql.WnsG8SuSeyBc.OOl.8CPH46FB9Vn7unOzdiTsB380vnzC"], ["activated", 1], ["activated_at", "2022-03-16 09:42:34.166418"]]
+  [1m[36mTRANSACTION (22.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-93@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "平野 優"], ["email", "example-93@railstutorial.org"], ["created_at", "2022-03-16 09:42:34.377078"], ["updated_at", "2022-03-16 09:42:34.377078"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$5FDVYWxZat/VOuXQssk/0ObBUpW22cjGutzx6P1j9OlAn4NakwAga"], ["activated", 1], ["activated_at", "2022-03-16 09:42:34.315859"]]
+  [1m[36mTRANSACTION (30.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-94@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "後藤 美咲"], ["email", "example-94@railstutorial.org"], ["created_at", "2022-03-16 09:42:34.539842"], ["updated_at", "2022-03-16 09:42:34.539842"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$iq1uSPsPcqOMRgHG0SkcROBNClVVuNzljI6S/VVeCxd3BZa84/XyS"], ["activated", 1], ["activated_at", "2022-03-16 09:42:34.471537"]]
+  [1m[36mTRANSACTION (45.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-95@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "長谷川 杏奈"], ["email", "example-95@railstutorial.org"], ["created_at", "2022-03-16 09:42:34.713070"], ["updated_at", "2022-03-16 09:42:34.713070"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$fdzXQj76/W/C88fYYuSe6eqfauZoUeoc0xOjrxDxQ/TSrbwx.UyM2"], ["activated", 1], ["activated_at", "2022-03-16 09:42:34.650236"]]
+  [1m[36mTRANSACTION (22.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-96@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "新井 奈々"], ["email", "example-96@railstutorial.org"], ["created_at", "2022-03-16 09:42:34.873721"], ["updated_at", "2022-03-16 09:42:34.873721"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$vuL613Q4s5AwcVNW2Q3xcuBHQdPRu3Cpcs9xY6f3fvA.PJSadzNtq"], ["activated", 1], ["activated_at", "2022-03-16 09:42:34.807678"]]
+  [1m[36mTRANSACTION (28.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-97@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "野村 遥"], ["email", "example-97@railstutorial.org"], ["created_at", "2022-03-16 09:42:35.021827"], ["updated_at", "2022-03-16 09:42:35.021827"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$pVaQVY5hdEEouC./sc8e8.xTgTjoOPGsFwSnSt0cmCm8HNKajl266"], ["activated", 1], ["activated_at", "2022-03-16 09:42:34.961343"]]
+  [1m[36mTRANSACTION (29.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-98@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "久保 美桜"], ["email", "example-98@railstutorial.org"], ["created_at", "2022-03-16 09:42:35.171640"], ["updated_at", "2022-03-16 09:42:35.171640"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$.kSaJNwUd9ko0M423C0JqefGRTYEvBGlDOltIL.tMoV8riYYIdsvu"], ["activated", 1], ["activated_at", "2022-03-16 09:42:35.110452"]]
+  [1m[36mTRANSACTION (18.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-99@railstutorial.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "三浦 陸"], ["email", "example-99@railstutorial.org"], ["created_at", "2022-03-16 09:42:35.310321"], ["updated_at", "2022-03-16 09:42:35.310321"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$bfSN28cxuyx1nyUyzxYrbOq8zddfhzpoj8dsVGNxztnUSJWtIhx1a"], ["activated", 1], ["activated_at", "2022-03-16 09:42:35.250247"]]
+  [1m[36mTRANSACTION (28.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2022-03-16 18:42:47 +0900
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 266.6ms | Allocations: 30210)
+  Rendered layouts/_shim.html.erb (Duration: 1.5ms | Allocations: 118)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:63:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 50.3ms | Allocations: 11578)
+  Rendered layouts/_footer.html.erb (Duration: 2.3ms | Allocations: 196)
+  Rendered layout layouts/application.html.erb (Duration: 347.3ms | Allocations: 48293)
+Completed 200 OK in 366ms (Views: 351.6ms | ActiveRecord: 2.2ms | Allocations: 53088)
+
+
+Started GET "/logout" for ::1 at 2022-03-16 18:42:55 +0900
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:63:in `current_user'
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.1ms | Allocations: 778)
+
+
+Started GET "/" for ::1 at 2022-03-16 18:42:55 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.2ms | Allocations: 634)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered layouts/_header.html.erb (Duration: 3.9ms | Allocations: 127)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 6343)
+Completed 200 OK in 23ms (Views: 22.7ms | ActiveRecord: 0.0ms | Allocations: 6592)
+
+
+Started GET "/login" for ::1 at 2022-03-16 18:42:57 +0900
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 383.3ms | Allocations: 441024)
+  Rendered layouts/_shim.html.erb (Duration: 0.4ms | Allocations: 13)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 118)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 421.0ms | Allocations: 446962)
+Completed 200 OK in 425ms (Views: 424.0ms | ActiveRecord: 0.0ms | Allocations: 447727)
+
+
+Started POST "/login" for ::1 at 2022-03-16 18:43:05 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"example@railstutorial.org", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログインする"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "example@railstutorial.org"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 71ms (ActiveRecord: 0.2ms | Allocations: 1297)
+
+
+Started GET "/users/1" for ::1 at 2022-03-16 18:43:05 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 3.4ms | Allocations: 220)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 13)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:63:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 5.0ms | Allocations: 678)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 33.4ms | Allocations: 6655)
+Completed 200 OK in 43ms (Views: 37.1ms | ActiveRecord: 0.5ms | Allocations: 8477)
+
+
+Started GET "/users" for ::1 at 2022-03-16 18:43:07 +0900
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:63:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/index.html.erb within layouts/application (Duration: 20.4ms | Allocations: 8107)
+  Rendered layouts/_shim.html.erb (Duration: 0.3ms | Allocations: 13)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 170)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 37.1ms | Allocations: 13864)
+Completed 200 OK in 41ms (Views: 37.6ms | ActiveRecord: 0.6ms | Allocations: 15050)
+
+
