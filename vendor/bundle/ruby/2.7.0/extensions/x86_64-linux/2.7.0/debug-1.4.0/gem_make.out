@@ -1,0 +1,16 @@
+current directory: /home/yuichi/sample_app/vendor/bundle/ruby/2.7.0/gems/debug-1.4.0/ext/debug
+/home/yuichi/.rbenv/versions/2.7.5/bin/ruby -I /home/yuichi/.rbenv/versions/2.7.5/lib/ruby/2.7.0 -r ./siteconf20220304-8224-1h9x9r5.rb extconf.rb
+creating Makefile
+
+current directory: /home/yuichi/sample_app/vendor/bundle/ruby/2.7.0/gems/debug-1.4.0/ext/debug
+make "DESTDIR=" clean
+
+current directory: /home/yuichi/sample_app/vendor/bundle/ruby/2.7.0/gems/debug-1.4.0/ext/debug
+make "DESTDIR="
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/yuichi/sample_app/vendor/bundle/ruby/2.7.0/gems/debug-1.4.0/ext/debug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20220304-8224-1hwwwq2/debug

@@ -1,0 +1,15 @@
+ja:
+
+  activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      user:
+        name: 名前
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード（確認用）
+      will_paginate:
+    #ラベル名で指定
+    previous_label: ←前
+    next_label: 次→
