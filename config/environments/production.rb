@@ -73,16 +73,12 @@ Rails.application.configure do
   host = 'https://pirafu-gorira-3999.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
-     #gmail利用時はaddress,domain,portは下記で固定
-     address:"smtp.gmail.com",
-     domain: 'gmail.com',
-     port:587,
-     #gmailのユーザアカウント（xxxx@gmail.com)※念のため、credentials.yml.enc行き
-     user_name: Rails.application.credentials.gmail[:user_name],
-     #gmail２段階認証回避のためにアプリケーションでの利用パスワードを取得、必ずcredentials.yml.endに設定を！！
-     password: Rails.application.credentials.gmail[:password],
-     #パスワードをBase64でエンコード
-     authentication: :login
+    :port           => ENV['MAILGUN_SMTP_PORT'],
+    :address        => ENV['MAILGUN_SMTP_SERVER'],
+    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+    :domain         => host,
+    :authentication => :plain,
   }
 
   # config.action_mailer.raise_delivery_errors = false
