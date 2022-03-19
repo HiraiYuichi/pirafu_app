@@ -73,8 +73,6 @@ Rails.application.configure do
   host = 'https://pirafu-gorira-3999.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
-    address:"smtp.gmail.com",
-    domain: 'gmail.com',
      #gmail利用時はaddress,domain,portは下記で固定
      address:"smtp.gmail.com",
      domain: 'gmail.com',
