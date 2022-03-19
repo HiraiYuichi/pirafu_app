@@ -23,8 +23,8 @@ class UsersController < ApplicationController
     if @user.save
         # Userモデルで定義したメソッド（send_activation_email）を呼び出して有効化メールを送信
         
-        
-      @user.send_activation_email
+        UserMailer.with(user: @user).welcome_email.deliver_later
+      #@user.send_activation_email
        flash[:info] = "メールを確認してアカウントを有効にしてください。"
        redirect_to root_url
     else

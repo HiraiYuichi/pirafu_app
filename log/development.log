@@ -27171,3 +27171,238 @@ Processing by StaticPagesController#home as HTML
 Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.0ms | Allocations: 6604)
 
 
+Started GET "/" for ::1 at 2022-03-19 20:35:33 +0900
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 165.7ms | Allocations: 30098)
+  Rendered layouts/_shim.html.erb (Duration: 0.4ms | Allocations: 118)
+  Rendered layouts/_header.html.erb (Duration: 11.2ms | Allocations: 489)
+  Rendered layouts/_footer.html.erb (Duration: 1.7ms | Allocations: 196)
+  Rendered layout layouts/application.html.erb (Duration: 194.4ms | Allocations: 37086)
+Completed 200 OK in 209ms (Views: 198.0ms | ActiveRecord: 0.0ms | Allocations: 41881)
+
+
+Started GET "/users/new" for ::1 at 2022-03-19 20:35:35 +0900
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 2.6ms | Allocations: 230)
+  Rendered users/new.html.erb within layouts/application (Duration: 1645.3ms | Allocations: 441576)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 12)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 118)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 1672.3ms | Allocations: 447509)
+Completed 200 OK in 1719ms (Views: 1674.8ms | ActiveRecord: 1.8ms | Allocations: 456633)
+
+
+Started POST "/signup" for ::1 at 2022-03-19 20:35:51 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"ぽけ", "email"=>"a19ru081@outlook.jp", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"アカウント作成"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "a19ru081@outlook.jp"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  [1m[36mUser Create (1.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "ぽけ"], ["email", "a19ru081@outlook.jp"], ["created_at", "2022-03-19 11:35:51.288494"], ["updated_at", "2022-03-19 11:35:51.288494"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$C6bucxeEl/JHn1k6DqmAJOyd1l2bXz9YoLGyd2OsoBl/iOwQi83Gq"], ["activated", 0], ["activated_at", nil]]
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (30.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:23:in `create'
+Completed 500 Internal Server Error in 217ms (ActiveRecord: 32.9ms | Allocations: 6387)
+
+
+  
+SyntaxError (/home/yuichi/pirafu_app/app/mailers/user_mailer.rb:6: syntax error, unexpected tLABEL, expecting '='
+...mail to: (@user.email, subject: "アカウント有効化")
+...                       ^~~~~~~~
+):
+  
+app/mailers/user_mailer.rb:6: syntax error, unexpected tLABEL, expecting '='
+app/mailers/user_mailer.rb:6: syntax error, unexpected tLABEL, expecting '='
+app/mailers/user_mailer.rb:6: syntax error, unexpected tLABEL, expecting '='
+app/controllers/users_controller.rb:26:in `create'
+Started POST "/signup" for ::1 at 2022-03-19 20:39:48 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"ぽけ", "email"=>"a19ru081@outlook.jp", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"アカウント作成"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "a19ru081@outlook.jp"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 3.9ms | Allocations: 476)
+  Rendered users/new.html.erb within layouts/application (Duration: 13.3ms | Allocations: 1908)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 12)
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 115)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 38.7ms | Allocations: 7605)
+Completed 200 OK in 155ms (Views: 49.6ms | ActiveRecord: 3.2ms | Allocations: 15127)
+
+
+Started POST "/signup" for ::1 at 2022-03-19 20:40:06 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"ぽけ", "email"=>"b19ru081@outlook.jp", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"アカウント作成"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "b19ru081@outlook.jp"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "ぽけ"], ["email", "b19ru081@outlook.jp"], ["created_at", "2022-03-19 11:40:06.955875"], ["updated_at", "2022-03-19 11:40:06.955875"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$K5Kxsur2oX.zOZ5T0lXttebTryCLjGa0lr/TLRopmslgvimnVYT12"], ["activated", 0], ["activated_at", nil]]
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (65.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:23:in `create'
+UserMailer#welcome_email: processed outbound mail in 2.5ms
+Completed 500 Internal Server Error in 364ms (ActiveRecord: 65.8ms | Allocations: 31555)
+
+
+  
+ActionView::MissingTemplate (Missing template user_mailer/welcome_email with "mailer".
+
+Searched in:
+  * "user_mailer"
+):
+  
+app/mailers/user_mailer.rb:13:in `welcome_email'
+app/controllers/users_controller.rb:26:in `create'
+Started GET "/" for ::1 at 2022-03-19 20:56:13 +0900
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 243.4ms | Allocations: 30282)
+  Rendered layouts/_shim.html.erb (Duration: 0.4ms | Allocations: 118)
+  Rendered layouts/_header.html.erb (Duration: 3.9ms | Allocations: 489)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 196)
+  Rendered layout layouts/application.html.erb (Duration: 266.3ms | Allocations: 37192)
+Completed 200 OK in 276ms (Views: 269.5ms | ActiveRecord: 0.0ms | Allocations: 41987)
+
+
+Started GET "/users/new" for ::1 at 2022-03-19 20:56:16 +0900
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 2.0ms | Allocations: 230)
+  Rendered users/new.html.erb within layouts/application (Duration: 616.7ms | Allocations: 441590)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 12)
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 118)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 657.4ms | Allocations: 447523)
+Completed 200 OK in 703ms (Views: 662.1ms | ActiveRecord: 2.2ms | Allocations: 456649)
+
+
+Started POST "/signup" for ::1 at 2022-03-19 20:56:37 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"ぽけ", "email"=>"example@pokemon12.org", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"アカウント作成"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example@pokemon12.org"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "ぽけ"], ["email", "example@pokemon12.org"], ["created_at", "2022-03-19 11:56:37.287323"], ["updated_at", "2022-03-19 11:56:37.287323"], ["password_digest", "[FILTERED]"], ["remember_digest", nil], ["admin", 0], ["activation_digest", "$2a$10$6vX8cxM3pBbD3OjSjqa1v.GZgO/3zhQXhi9uDAIohuKFrHwW9Ejhq"], ["activated", 0], ["activated_at", nil]]
+  ↳ app/controllers/users_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (102.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:23:in `create'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 969cb663-34be-4d59-803c-4179220191bf) to Async(default) with arguments: "UserMailer", "welcome_email", "deliver_now", {:params=>{:user=>#<GlobalID:0x00007fa70421c840 @uri=#<URI::GID gid://sample-app/User/105>>}, :args=>[]}
+Redirected to http://localhost:3000/
+Completed 302 Found in 337ms (ActiveRecord: 103.6ms | Allocations: 32612)
+
+
+Started GET "/" for ::1 at 2022-03-19 20:56:37 +0900
+[ActiveJob] [ActionMailer::MailDeliveryJob] [969cb663-34be-4d59-803c-4179220191bf]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 105], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [969cb663-34be-4d59-803c-4179220191bf] Performing ActionMailer::MailDeliveryJob (Job ID: 969cb663-34be-4d59-803c-4179220191bf) from Async(default) enqueued at 2022-03-19T11:56:37Z with arguments: "UserMailer", "welcome_email", "deliver_now", {:params=>{:user=>#<GlobalID:0x00007fa7112610f0 @uri=#<URI::GID gid://sample-app/User/105>>}, :args=>[]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [969cb663-34be-4d59-803c-4179220191bf] UserMailer#welcome_email: processed outbound mail in 6.0ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [969cb663-34be-4d59-803c-4179220191bf] Error performing ActionMailer::MailDeliveryJob (Job ID: 969cb663-34be-4d59-803c-4179220191bf) from Async(default) in 28.68ms: ActionView::MissingTemplate (Missing template user_mailer/welcome_email with "mailer".
+
+Searched in:
+  * "user_mailer"
+):
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:977:in `each_template'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:965:in `collect_responses_from_templates'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:943:in `collect_responses'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:851:in `mail'
+/home/yuichi/pirafu_app/app/mailers/user_mailer.rb:13:in `welcome_email'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/actionpack-7.0.2.3/lib/abstract_controller/base.rb:214:in `process_action'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/actionpack-7.0.2.3/lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/actiontext-7.0.2.3/lib/action_text/rendering.rb:20:in `with_renderer'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/actiontext-7.0.2.3/lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `instance_exec'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:138:in `run_callbacks'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/actionpack-7.0.2.3/lib/abstract_controller/callbacks.rb:233:in `process_action'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/actionpack-7.0.2.3/lib/abstract_controller/base.rb:151:in `process'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/actionmailer-7.0.2.3/lib/action_mailer/rescuable.rb:25:in `block in process'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/actionmailer-7.0.2.3/lib/action_mailer/rescuable.rb:17:in `handle_exceptions'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/actionmailer-7.0.2.3/lib/action_mailer/rescuable.rb:24:in `process'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/actionview-7.0.2.3/lib/action_view/rendering.rb:39:in `process'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:623:in `block in process'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `block in instrument'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activesupport-7.0.2.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `instrument'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/actionmailer-7.0.2.3/lib/action_mailer/base.rb:622:in `process'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/actionmailer-7.0.2.3/lib/action_mailer/parameterized.rb:136:in `block in processed_mailer'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/actionmailer-7.0.2.3/lib/action_mailer/parameterized.rb:134:in `tap'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/actionmailer-7.0.2.3/lib/action_mailer/parameterized.rb:134:in `processed_mailer'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/actionmailer-7.0.2.3/lib/action_mailer/message_delivery.rb:118:in `deliver_now'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/actionmailer-7.0.2.3/lib/action_mailer/mail_delivery_job.rb:23:in `perform'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activejob-7.0.2.3/lib/active_job/execution.rb:59:in `block in _perform_job'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/i18n-1.10.0/lib/i18n.rb:328:in `with_locale'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activejob-7.0.2.3/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `instance_exec'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activesupport-7.0.2.3/lib/active_support/core_ext/time/zones.rb:66:in `use_zone'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activejob-7.0.2.3/lib/active_job/timezones.rb:9:in `block (2 levels) in <module:Timezones>'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `instance_exec'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:138:in `run_callbacks'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activejob-7.0.2.3/lib/active_job/execution.rb:58:in `_perform_job'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:20:in `_perform_job'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activejob-7.0.2.3/lib/active_job/execution.rb:46:in `perform_now'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:14:in `block in perform_now'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:25:in `block in instrument'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `block in instrument'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activesupport-7.0.2.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activesupport-7.0.2.3/lib/active_support/notifications.rb:206:in `instrument'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:35:in `instrument'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activejob-7.0.2.3/lib/active_job/instrumentation.rb:14:in `perform_now'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activejob-7.0.2.3/lib/active_job/logging.rb:18:in `block in perform_now'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activesupport-7.0.2.3/lib/active_support/tagged_logging.rb:99:in `block in tagged'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activesupport-7.0.2.3/lib/active_support/tagged_logging.rb:37:in `tagged'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activesupport-7.0.2.3/lib/active_support/tagged_logging.rb:99:in `tagged'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activejob-7.0.2.3/lib/active_job/logging.rb:25:in `tag_logger'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activejob-7.0.2.3/lib/active_job/logging.rb:18:in `perform_now'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activejob-7.0.2.3/lib/active_job/execution.rb:24:in `block in execute'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activejob-7.0.2.3/lib/active_job/railtie.rb:54:in `block (4 levels) in <class:Railtie>'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activesupport-7.0.2.3/lib/active_support/execution_wrapper.rb:92:in `wrap'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activesupport-7.0.2.3/lib/active_support/reloader.rb:72:in `block in wrap'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activesupport-7.0.2.3/lib/active_support/execution_wrapper.rb:92:in `wrap'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activesupport-7.0.2.3/lib/active_support/reloader.rb:71:in `wrap'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activejob-7.0.2.3/lib/active_job/railtie.rb:53:in `block (3 levels) in <class:Railtie>'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `instance_exec'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activesupport-7.0.2.3/lib/active_support/callbacks.rb:138:in `run_callbacks'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activejob-7.0.2.3/lib/active_job/execution.rb:22:in `execute'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/activejob-7.0.2.3/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:363:in `run_task'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `block (3 levels) in create_worker'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:335:in `loop'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:335:in `block (2 levels) in create_worker'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `catch'
+/home/yuichi/pirafu_app/vendor/bundle/ruby/2.7.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block in create_worker'
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.9ms | Allocations: 639)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 118)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 6384)
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 6633)
+
+

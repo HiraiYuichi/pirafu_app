@@ -1,15 +1,22 @@
 class UserMailer < ApplicationMailer
-  def account_activation(user)
+ # def account_activation(user)
     # インスタンス変数を定義
-    @user = user
+  #  @user = user
     # user.emailにタイトルが"Account activation"のメールを送信
-    mail to: user.email, subject: "Account activation"
-  end
- 
+   # mail to: (@user.email, subject: "アカウント有効化")
+  #end
+  default from: 'notifications@example.com'
 
-  def password_reset
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
+  def welcome_email
+    @user = params[:user]
+    
+    mail(to: @user.email, subject: 'アカウント有効化')
   end
+
+
+  #def password_reset
+   # @greeting = "Hi"
+
+    #mail to: "to@example.org"
+  #end
 end
