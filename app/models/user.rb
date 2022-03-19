@@ -5,7 +5,6 @@ class User < ApplicationRecord
   update_attribute(:activated,    true)
   update_attribute(:activated_at, Time.zone.now)
    #指定のカラムを指定の値に、DBに直接上書き保存
-  update_columns(activated: true, activated_at: Time.zone.now)
 end
 
 # 有効化用のメールを送信する
@@ -24,12 +23,7 @@ end
 
 
 
-#仮想の属性:remember_token、activation_tokenをUserクラスに定義
-attr_accessor :remember_token, :activation_token
-#保存の直前に参照するメソッド
-before_save   :downcase_email
-# データ作成の直前に参照するメソッド
-before_create :create_activation_digest
+
 
 
      #saveの直前に　現在のユーザーのemailに　emailを小文字にしたものを代入
@@ -73,7 +67,12 @@ before_create :create_activation_digest
       update_attribute(:remember_digest, nil)
     end
 
-
+#仮想の属性:remember_token、activation_tokenをUserクラスに定義
+attr_accessor :remember_token, :activation_token
+#保存の直前に参照するメソッド
+before_save   :downcase_email
+# データ作成の直前に参照するメソッド
+before_create :create_activation_digest
     private
 
      # メールアドレスをすべて小文字にする
